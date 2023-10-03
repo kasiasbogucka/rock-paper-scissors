@@ -18,9 +18,19 @@ public class RealUser implements User{
 
     public String userMove() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("What's your move?: ");
-        String choice = scanner.nextLine();
-        String move= choice.toLowerCase();
-        return move;
+
+        String choice;
+
+        while (true) {
+            System.out.print("What's your move?: ");
+            choice = scanner.nextLine();
+            choice = choice.toLowerCase();
+            if (choice.equals("rock") || choice.equals("paper") || choice.equals("scissors")){
+                break;
+            }
+            System.out.println("Invalid choice");
+        }
+        return choice;
+
     }
 }
